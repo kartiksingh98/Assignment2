@@ -1,0 +1,357 @@
+-------------------------------------------------1-------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MovieManager mm = new MovieManager();
+            mm.getting();
+            mm.displaying();
+            Console.ReadKey();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Movie
+    {
+        int id;
+        String name;
+        float duration;
+
+        public int Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public float Duration { get => duration; set => duration = value; }
+        public void insertdetails(int id1, String Name1, float time)
+        {
+            Id = id1;
+            Name = Name1;
+            Duration = time;
+        }
+        public void displaydetails()
+        {
+            Console.WriteLine("Movie ID is"+" "+Id);
+            Console.WriteLine("Movie Name is" + " " + Name);
+            Console.WriteLine("Duration is" + " " + Duration);
+
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class MovieManager
+    {
+        int id;
+        String name;
+        float time;
+
+
+        Movie obj = new Movie();
+
+        public int Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public float Time { get => time; set => time = value; }
+
+        public void getting()
+        {
+            Console.WriteLine("Insert Id: ");
+            Id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Insert Movie Name: ");
+            Name = Console.ReadLine();
+            Console.WriteLine("Insert Duration: ");
+            Time = float.Parse(Console.ReadLine());
+            obj.insertdetails(Id, Name, Time);
+
+        }
+        public void displaying()
+        {
+            obj.displaydetails();
+        }
+    }
+}
+
+-------------------------------------------2--------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+ int num;
+            Console.WriteLine("Insert Number");
+            num = Convert.ToInt32(Console.ReadLine());
+            if (num % 7 == 0)
+            {
+                Console.WriteLine("Divisible by 7");
+            }
+            else 
+            {
+                Console.WriteLine("Not Divisible by 7");
+               
+            }
+            Console.ReadKey();}
+}
+}
+
+------------------------------------------3---------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { int num,num1,num2;
+            Console.WriteLine("Enter First Number");
+            num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Second Number");
+            num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Third Number");
+            num2 = Convert.ToInt32(Console.ReadLine());
+            if(num>num1 && num>num2)
+            {
+                Console.WriteLine(num + " " + "is greatest");
+            }
+            else if (num1 > num2 && num1 > num)
+            {
+                Console.WriteLine(num1 + " " + "is greatest");
+            }
+            else
+            {
+                Console.WriteLine(num2+" "+"is greatest");
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
+
+---------------------------------------------4----------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+         Clinic clinic = new Clinic();
+            clinic.createdoctor();
+            clinic.printing();
+            clinic.deletedoctor();
+            Console.ReadKey();
+
+
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Clinic
+    {
+        Doctor obj = new Doctor();
+        public void createdoctor()
+        {
+         
+            obj.getdetails();
+        }
+        public void deletedoctor()
+        {
+            obj = null;
+            GC.Collect();
+
+        }
+        public void printing()
+        {
+            obj.printdetails();
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Doctor
+    {
+        int Exp, Age;
+        String Name;
+        long phone;
+
+        public int Exp1 { get => Exp; set => Exp = value; }
+        public int Age1 { get => Age; set => Age = value; }
+        public string Name1 { get => Name; set => Name = value; }
+        public long Phone { get => phone; set => phone = value; }
+        public Doctor()
+         {
+           Exp=1;
+         }
+        ~Doctor()
+        {
+            Console.WriteLine("Bye Bye "+Name);
+        }
+        public void getdetails()
+        {
+            Console.WriteLine("Enter Name");
+            Name = Console.ReadLine();
+            Console.WriteLine("Enter Experience");
+            int.TryParse(Console.ReadLine(), out Exp);
+            if (Exp==0)
+            {
+                Exp = 1;
+            }
+            Console.WriteLine("Enter Age");
+            Age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Phone");
+            Phone = long.Parse(Console.ReadLine());
+
+        }
+        public void printdetails()
+        {
+            Console.WriteLine("Doctor Name is " + Name);
+            Console.WriteLine("Doctor Experience is "+ Exp);
+            Console.WriteLine("Doctor Age is "+ Age);
+            Console.WriteLine("Doctor Number i" + phone);
+
+        }
+    }
+}
+---------------------------------------------5------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {            String k,k1;
+            k = Console.ReadLine();
+            k1 = k.ToUpper();
+            Console.WriteLine(k1);
+            Console.ReadKey();
+
+
+        }
+    }
+}
+
+
+----------------------------------------------6-----------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+
+            String k1;
+            int count=0;
+            k1 = Console.ReadLine();
+            for (int i = 0; i < k1.Length; i++)
+            {
+                count = i;
+            }
+            Console.WriteLine("Length is "+ count);
+            Console.ReadKey();
+
+        }
+    }
+}
+
+-----------------------------------------------7-----------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace assignment2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, add, subtract, multiply, divide;
+            Console.WriteLine("1st number is");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("2nd number is");
+            b = Convert.ToInt32(Console.ReadLine());
+
+            add = a + b;
+            subtract = a - b;
+            multiply = a * b;
+            divide = a / b;
+
+            Console.WriteLine("sum is" + add);
+            Console.WriteLine("subtraction is" + subtract);
+            Console.WriteLine("multiplication is" + multiply);
+            Console.WriteLine("division  is" + divide);
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
